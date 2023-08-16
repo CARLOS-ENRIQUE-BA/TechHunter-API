@@ -12,6 +12,6 @@ app.use(express.json());
 app.use("/products", productRouter);
 app.use("/load", loadRouter);
 
-app.listen(3000, () => {
-  signale.success("Server online in port 3000");
+app.listen(3003, () => {
+  signale.success("Server online in port 3003");
 });

@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
 
 import { CreateProductUseCase } from "../../application/CreateProductUseCase";
-//import { Product } from "../../domain/Product";
 
 export class CreateProductController {
   constructor(readonly createProductUseCase: CreateProductUseCase) {}
 
   async run(req: Request, res: Response) {
     const data = req.body;
+    console.log("mensaje  " + data);
     try {
       const product = await this.createProductUseCase.run(
         data.name,

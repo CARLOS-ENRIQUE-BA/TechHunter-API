@@ -15,10 +15,9 @@ export class GetByIdProductController {
         res.status(200).send({
           status: "success",
           data: {
-            id: product.id,
+        
             name: product.name,
-            description: product.description,
-            price: product.price,
+       
           },
         });
       else
