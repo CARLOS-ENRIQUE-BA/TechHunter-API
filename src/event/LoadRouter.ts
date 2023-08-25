@@ -2,11 +2,11 @@ import amqp from "amqplib";
 import express from "express";
 
 const config = {
-  protocol: "amqp",
-  hostname: "44.208.72.218",
+  protocol: "",
+  hostname: "localhost",
   port: 5672,
-  username: "llaverito",
-  password: "sainz097",
+  username: "root",
+  password: "",
 };
 
 export const loadRouter = express.Router();

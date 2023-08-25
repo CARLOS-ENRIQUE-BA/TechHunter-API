@@ -3,17 +3,18 @@ import { ProductRepository } from "../domain/ProductRepository";
 
 export class CreateProductUseCase {
   constructor(readonly productRepository: ProductRepository) {}
-
   async run(
-    name: string,
-    description: string,
-    price: number
+    nombre: string,
+    apellido: string,
+    usuario: string,
+    contraseña: string
   ): Promise<Product | null> {
     try {
       const product = await this.productRepository.createProduct(
-        name,
-        description,
-        price
+        nombre,
+        apellido,
+        usuario,
+        contraseña
       );
       return product;
     } catch (error) {

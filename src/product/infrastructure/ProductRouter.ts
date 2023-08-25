@@ -1,5 +1,4 @@
 import express from "express";
-
 import { createProductController } from "./dependencies";
 import { getAllProductController } from "./dependencies";
 import { getByIdProductController } from "./dependencies";

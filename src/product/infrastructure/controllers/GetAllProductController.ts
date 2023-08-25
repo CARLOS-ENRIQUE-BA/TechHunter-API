@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-
 import { GetAllProductUseCase } from "../../application/GetAllProductUseCase";
 
 export class GetAllProductController {
@@ -7,18 +6,19 @@ export class GetAllProductController {
 
   async run(req: Request, res: Response) {
     try {
-      const products = await this.getAllProductUseCase.run();
-      console.log(products);
-      if (products)
+      const Register = await this.getAllProductUseCase.run();
+      console.log(Register);
+      if (Register)
         //Code HTTP : 200 -> Consulta exitosa
         res.status(200).send({
           status: "success",
-          data: products.map((product: any) => {
+          data: Register.map((product: any) => {
             return {
               id: product.id,
-              name: product.name,
-              description: product.description,
-              price: product.price,
+              nombre: product.nombre,
+              apellido: product.apellido,
+              usuario: product.usuario,
+              contraseña: product.contraseña
             };
           }),
         });

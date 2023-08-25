@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-
 import { GetByIdProductUseCase } from "../../application/GetByIdProductUseCase";
 
 export class GetByIdProductController {
@@ -15,9 +14,10 @@ export class GetByIdProductController {
         res.status(200).send({
           status: "success",
           data: {
-        
-            name: product.name,
-       
+            nombre: product.nombre,
+            apellido: product.apellido,
+            usuario: product.usuario,
+            contraseña: product.contraseña
           },
         });
       else

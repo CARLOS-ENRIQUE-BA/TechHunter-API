@@ -1,29 +1,28 @@
 import { Request, Response } from "express";
-
 import { CreateProductUseCase } from "../../application/CreateProductUseCase";
 
 export class CreateProductController {
   constructor(readonly createProductUseCase: CreateProductUseCase) {}
-
   async run(req: Request, res: Response) {
     const data = req.body;
     console.log("mensaje  " + data);
     try {
       const product = await this.createProductUseCase.run(
-        data.name,
-        data.description,
-        data.price
+        data.nombre,
+        data.apellido,
+        data.usuario,
+        data.contraseña
       );
 
       if (product)
-        //Code HTTP : 201 -> Creado
         res.status(201).send({
           status: "success",
           data: {
             id: product?.id,
-            name: product?.name,
-            description: product?.description,
-            price: product?.price,
+            nombre: product?.nombre,
+            apellido: product?.apellido,
+            usuario: product?.usuario,
+            contraseña: product?.contraseña
           },
         });
       else
